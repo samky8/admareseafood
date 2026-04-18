@@ -273,14 +273,14 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @Ad_Mare
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-link">
+          <a href="https://www.facebook.com/AdMareSeafood" target="_blank" rel="noopener" class="social-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm" novalidate>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST" novalidate>
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name <span class="required">*</span></label>
@@ -293,13 +293,15 @@
         </div>
         <div class="form-field">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+          <input type="text" id="subject" name="subject" placeholder="What's your message about?" />
         </div>
         <div class="form-field">
           <label for="message">Message <span class="required">*</span></label>
           <textarea id="message" name="message" required rows="5" placeholder="Your message…"></textarea>
         </div>
+        <input type="hidden" name="_subject" value="New website message from Ad Mare" />
         <button type="submit" class="btn btn-primary btn-full">Send message</button>
+        <p class="form-direct-email">Direct email: <a href="mailto:admare@outlook.com">admare@outlook.com</a></p>
         <p class="form-status" id="formStatus" aria-live="polite"></p>
       </form>
     </div>
@@ -325,7 +327,7 @@
         <a href="https://www.instagram.com/Ad_Mare" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com/AdMareSeafood" target="_blank" rel="noopener" aria-label="Facebook">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
         <a href="https://maps.google.com/?q=1993+Robertson+Rd,+Ottawa,+ON" target="_blank" rel="noopener" aria-label="Location">

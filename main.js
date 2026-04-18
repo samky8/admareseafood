@@ -27,18 +27,20 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-/* ---- Contact form (client-side validation + placeholder submit) ---- */
+/* ---- Contact form (client-side validation + Formspree submit) ---- */
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
+const formspreePlaceholder = 'YOUR_FORMSPREE_FORM_ID';
 
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     status.className = 'form-status';
     status.textContent = '';
 
     const name    = form.name.value.trim();
     const email   = form.email.value.trim();
+    const subject = (form.subject.value || 'Website contact form').trim();
     const message = form.message.value.trim();
     let valid = true;
 
@@ -56,11 +58,48 @@ if (form) {
       return;
     }
 
-    // TODO: wire up to a form backend (e.g. Formspree, Netlify Forms, etc.)
-    // For now, show a success message
-    status.textContent = "Thanks! We'll be in touch soon.";
-    status.className = 'form-status success';
-    form.reset();
+    if (form.action.includes(formspreePlaceholder)) {
+      status.textContent = 'Add your real Formspree form ID in index.html before publishing.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: new FormData(form)
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed.');
+      }
+
+      status.textContent = "Thanks! Your message has been sent.";
+      status.className = 'form-status success';
+      form.reset();
+      form.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
+      form.subject.value = '';
+      form.message.value = '';
+    } catch (error) {
+      status.textContent = 'We could not send your message right now. Please try again or email us directly.';
+      status.className = 'form-status error';
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
   });
 }
 

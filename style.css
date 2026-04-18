@@ -127,6 +127,12 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(224,123,57,0.28);
 }
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+  box-shadow: none;
+}
 .btn-ghost {
   background: rgba(255,255,255,0.15);
   color: var(--color-white);
@@ -669,6 +675,18 @@ p:last-child { margin-bottom: 0; }
   text-align: center;
   min-height: 1.2em;
 }
+.form-direct-email {
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+.form-direct-email a {
+  color: var(--color-ocean);
+  font-weight: 600;
+}
+.form-direct-email a:hover { color: var(--color-accent); }
 .form-status.success { color: #2e7d32; }
 .form-status.error   { color: #c62828; }
 
