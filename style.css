@@ -981,6 +981,13 @@ p a:not(.btn):not(.social-link):focus-visible,
 .contact-intro .section-label { color: var(--color-gold); }
 .contact-intro h2 { color: var(--color-white); }
 .contact-intro p { color: rgba(255,255,255,0.65); }
+.contact-intro p a {
+  color: var(--color-accent-lt);
+}
+.contact-intro p a:hover,
+.contact-intro p a:focus-visible {
+  color: var(--color-gold);
+}
 .contact-social {
   display: flex;
   gap: 0.75rem;
