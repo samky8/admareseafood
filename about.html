@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Ad Mare | Ottawa's East Coast Seafood Truck in Bells Corners</title>
-  <meta name="description" content="Learn the story of Ad Mare, from its downtown Ottawa food truck beginnings in 2013 to its new Bells Corners home at 1993 Robertson Rd." />
+  <meta name="description" content="Learn the story of Ad Mare, from its downtown Ottawa food truck beginnings in 2013 to its new Bells Corners location at 1993 Robertson Rd." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="Ad Mare Mobile Seafood" />
   <link rel="canonical" href="https://admareseafood.ca/about.html" />
@@ -30,23 +30,103 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Ad Mare",
-    "url": "https://admareseafood.ca/about.html",
-    "description": "The story of Ad Mare Mobile Seafood, from downtown Ottawa to Bells Corners.",
-    "mainEntity": {
-      "@type": "FoodTruck",
-      "name": "Ad Mare Mobile Seafood",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1993 Robertson Rd.",
-        "addressLocality": "Ottawa",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
+    "@graph": [
+      {
+        "@type": "FoodEstablishment",
+        "@id": "https://admareseafood.ca/#business",
+        "name": "Ad Mare Mobile Seafood",
+        "alternateName": "Ad Mare Seafood",
+        "url": "https://admareseafood.ca/",
+        "logo": "https://admareseafood.ca/images/Ad%20Mare%20Transparent.png",
+        "image": [
+          "https://admareseafood.ca/images/MarioServing.jpg",
+          "https://admareseafood.ca/images/ad%20mare%20-%20truck.jpg"
+        ],
+        "description": "Ottawa's mobile seafood truck serving fish and chips, tacos, lobster rolls, and coastal favourites from 1993 Robertson Rd in Bells Corners.",
+        "servesCuisine": "Seafood",
+        "priceRange": "$$",
+        "email": "admare@outlook.com",
+        "foundingDate": "2013",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1993 Robertson Rd.",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Ottawa"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:30",
+            "closes": "19:30"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/AdMareSeafood",
+          "https://www.instagram.com/Ad_Mare"
+        ],
+        "hasMap": "https://maps.google.com/?q=1993+Robertson+Rd,+Ottawa,+ON"
       },
-      "servesCuisine": "Seafood",
-      "url": "https://admareseafood.ca/"
-    }
+      {
+        "@type": "WebSite",
+        "@id": "https://admareseafood.ca/#website",
+        "url": "https://admareseafood.ca/",
+        "name": "Ad Mare Mobile Seafood Truck",
+        "publisher": {
+          "@id": "https://admareseafood.ca/#business"
+        }
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://admareseafood.ca/about.html#webpage",
+        "url": "https://admareseafood.ca/about.html",
+        "name": "About Ad Mare",
+        "description": "The story of Ad Mare Mobile Seafood, from downtown Ottawa to Bells Corners.",
+        "isPartOf": {
+          "@id": "https://admareseafood.ca/#website"
+        },
+        "about": {
+          "@id": "https://admareseafood.ca/#business"
+        },
+        "mainEntity": {
+          "@id": "https://admareseafood.ca/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://admareseafood.ca/images/MarioServing.jpg"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://admareseafood.ca/about.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://admareseafood.ca/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://admareseafood.ca/about.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="style.css" />
@@ -103,8 +183,8 @@
           <article class="about-story-block">
             <p class="section-label">The beginning</p>
             <h2>Downtown roots</h2>
-            <p>Ad Mare started in 2013 at the corner of Slater and O'Connor in downtown Ottawa. From our beginnings parked outside Export Development Canada building, we served fresh, made-to-order seafood to office workers and anyone who followed the smell of fish and chips down the street.</p>
-            <p>They kept coming back for the crispy fish and chips, loaded fish tacos, lobster rolls when they were in season, fresh ingredients, and no shortcuts. That approach helped Ad Mare become part of Ottawa's growing street food scene, and for years, downtown felt like home.</p>
+            <p>Ad Mare started in 2013 at the corner of Slater and O'Connor in downtown Ottawa. From our beginnings parked outside Export Development Canada (EDC) building, we served fresh, made-to-order seafood to office workers and anyone who followed the smell of fish and chips down the street.</p>
+            <p>They kept coming back for the crispy fish and chips, loaded fish tacos, lobster rolls (during lobster season), fresh ingredients, and no shortcuts. That approach helped Ad Mare become part of Ottawa's growing street food scene, and for years, downtown felt like home.</p>
           </article>
 
           <article class="about-story-block">

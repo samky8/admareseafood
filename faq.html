@@ -29,71 +29,157 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "Where is Ad Mare located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ad Mare Seafood is now located at 1993 Robertson Rd. in Bells Corners, behind East India Company in Ottawa, Ontario."
+        "@type": "FoodEstablishment",
+        "@id": "https://admareseafood.ca/#business",
+        "name": "Ad Mare Mobile Seafood",
+        "alternateName": "Ad Mare Seafood",
+        "url": "https://admareseafood.ca/",
+        "logo": "https://admareseafood.ca/images/Ad%20Mare%20Transparent.png",
+        "image": "https://admareseafood.ca/images/MarioServing.jpg",
+        "description": "Ottawa's mobile seafood truck serving fish and chips, tacos, lobster rolls, and coastal favourites from 1993 Robertson Rd in Bells Corners.",
+        "servesCuisine": "Seafood",
+        "priceRange": "$$",
+        "email": "admare@outlook.com",
+        "foundingDate": "2013",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1993 Robertson Rd.",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Ottawa"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:30",
+            "closes": "19:30"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/AdMareSeafood",
+          "https://www.instagram.com/Ad_Mare"
+        ],
+        "hasMap": "https://maps.google.com/?q=1993+Robertson+Rd,+Ottawa,+ON"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://admareseafood.ca/#website",
+        "url": "https://admareseafood.ca/",
+        "name": "Ad Mare Mobile Seafood Truck",
+        "publisher": {
+          "@id": "https://admareseafood.ca/#business"
         }
       },
       {
-        "@type": "Question",
-        "name": "What are your hours?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ad Mare operates seasonally from spring through fall. Hours may vary throughout the week based on weather, events, and daily availability. Because seafood is prepared fresh daily, some menu items may sell out before closing. For the most up-to-date schedule and availability, please check the latest Facebook or Instagram post before visiting."
-        }
+        "@type": "FAQPage",
+        "@id": "https://admareseafood.ca/faq.html#webpage",
+        "url": "https://admareseafood.ca/faq.html",
+        "name": "FAQ | Ad Mare Mobile Seafood Truck",
+        "description": "Frequently asked questions about Ad Mare Seafood in Ottawa, including location, hours, parking, sellouts, lobster rolls, and catering.",
+        "isPartOf": {
+          "@id": "https://admareseafood.ca/#website"
+        },
+        "about": {
+          "@id": "https://admareseafood.ca/#business"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is Ad Mare located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ad Mare Seafood is now located at 1993 Robertson Rd. in Bells Corners, behind East India Company in Ottawa, Ontario."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are your hours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ad Mare operates seasonally from spring through fall. Hours may vary throughout the week based on weather, events, and daily availability. Because seafood is prepared fresh daily, some menu items may sell out before closing. For the most up-to-date schedule and availability, please check the latest Facebook or Instagram post before visiting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I park?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Free parking is available at Ad Mare's Bells Corners location at 1993 Robertson Road, behind East India Company."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do menu items sell out?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, especially during busy weekends and peak summer periods. Because seafood is prepared daily in limited quantities, some items may sell out before closing time. Visiting earlier in the day is recommended for the best selection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Ad Mare known for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ad Mare is known for made-to-order seafood including crispy fish and chips, loaded fish tacos, lobster rolls when they are in season, calamari, and other coastal-inspired dishes served in Ottawa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I get lobster rolls in Ottawa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ad Mare Seafood serves lobster rolls seasonally in Ottawa, alongside other seafood favourites including fish tacos and calamari."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you cater private events?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unfortunately, Ad Mare is not available for catering at this time. Thank you for considering us."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer reusable takeout containers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Ad Mare is a Friendlier partner. Guests can ask for reusable Friendlier packaging when ordering and return containers through the Friendlier network so they can be washed and reused."
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "Where can I park?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Free parking is available at Ad Mare's Bells Corners location at 1993 Robertson Road, behind East India Company."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do menu items sell out?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, especially during busy weekends and peak summer periods. Because seafood is prepared daily in limited quantities, some items may sell out before closing time. Visiting earlier in the day is recommended for the best selection."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Ad Mare known for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ad Mare is known for made-to-order seafood including crispy fish and chips, loaded fish tacos, lobster rolls when they are in season, calamari, and other coastal-inspired dishes served in Ottawa."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where can I get lobster rolls in Ottawa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ad Mare Seafood serves lobster rolls seasonally in Ottawa, alongside other seafood favourites including fish tacos and calamari."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you cater private events?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Unfortunately, Ad Mare is not available for catering at this time. Thank you for considering us."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer reusable takeout containers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Ad Mare is a Friendlier partner. Guests can ask for reusable Friendlier packaging when ordering and return containers through the Friendlier network so they can be washed and reused."
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://admareseafood.ca/faq.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://admareseafood.ca/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://admareseafood.ca/faq.html"
+          }
+        ]
       }
     ]
   }

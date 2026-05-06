@@ -30,6 +30,138 @@
   <!-- Non-blocking font load -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FoodEstablishment",
+        "@id": "https://admareseafood.ca/#business",
+        "name": "Ad Mare Mobile Seafood",
+        "alternateName": "Ad Mare Seafood",
+        "url": "https://admareseafood.ca/",
+        "logo": "https://admareseafood.ca/images/Ad%20Mare%20Transparent.png",
+        "image": [
+          "https://admareseafood.ca/images/MarioServing.jpg",
+          "https://admareseafood.ca/images/ad%20mare%20-%20truck.jpg",
+          "https://admareseafood.ca/images/Fish%20%26%20chips%20(Ad%20Mare%20chips%20-%20potato%2C%20sweet%20potato%2C%20and%20beets).jpg"
+        ],
+        "description": "Ottawa's mobile seafood truck serving fish and chips, tacos, lobster rolls, and coastal favourites from 1993 Robertson Rd in Bells Corners.",
+        "servesCuisine": "Seafood",
+        "priceRange": "$$",
+        "email": "admare@outlook.com",
+        "foundingDate": "2013",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1993 Robertson Rd.",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Ottawa"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:30",
+            "closes": "19:30"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/AdMareSeafood",
+          "https://www.instagram.com/Ad_Mare"
+        ],
+        "hasMap": "https://maps.google.com/?q=1993+Robertson+Rd,+Ottawa,+ON"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://admareseafood.ca/#website",
+        "url": "https://admareseafood.ca/",
+        "name": "Ad Mare Mobile Seafood Truck",
+        "publisher": {
+          "@id": "https://admareseafood.ca/#business"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://admareseafood.ca/#webpage",
+        "url": "https://admareseafood.ca/",
+        "name": "Ad Mare Mobile Seafood Truck | Ottawa Seafood at 1993 Robertson Rd",
+        "description": "Ad Mare is Ottawa's mobile seafood truck serving fish and chips, tacos, and coastal favourites from 1993 Robertson Rd in Bells Corners.",
+        "isPartOf": {
+          "@id": "https://admareseafood.ca/#website"
+        },
+        "about": {
+          "@id": "https://admareseafood.ca/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://admareseafood.ca/images/MarioServing.jpg"
+        }
+      },
+      {
+        "@type": "Menu",
+        "@id": "https://admareseafood.ca/#menu",
+        "name": "Ad Mare Example Menu",
+        "url": "https://admareseafood.ca/#menu",
+        "inLanguage": "en-CA",
+        "mainEntityOfPage": {
+          "@id": "https://admareseafood.ca/#webpage"
+        },
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Seafood favourites",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Fish & Chips",
+                "description": "Fresh fish in a crispy golden batter, served with potato, sweet potato, and beet chips and truck-made tartar sauce."
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Fish Tacos",
+                "description": "Soft tortillas loaded with seasoned fish, slaw, and fresh toppings."
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Shrimp Tacos",
+                "description": "Plump shrimp with all the fixings."
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Limited time specials",
+                "description": "Rotating seafood specials posted on Ad Mare's social channels."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://admareseafood.ca/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://admareseafood.ca/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5BCPD6RD"></script>
   <script>

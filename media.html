@@ -30,69 +30,161 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Ad Mare Media",
-    "url": "https://admareseafood.ca/media.html",
-    "description": "Articles, interviews, French-language features, and guides that mention Ad Mare Mobile Seafood.",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "url": "https://www.ctvnews.ca/ottawa/article/thirsty-here-are-some-of-the-best-patios-to-check-out-in-ottawa-this-summer/",
-          "name": "Thirsty? Here are some of the best patios to check out in Ottawa this summer"
+    "@graph": [
+      {
+        "@type": "FoodEstablishment",
+        "@id": "https://admareseafood.ca/#business",
+        "name": "Ad Mare Mobile Seafood",
+        "alternateName": "Ad Mare Seafood",
+        "url": "https://admareseafood.ca/",
+        "logo": "https://admareseafood.ca/images/Ad%20Mare%20Transparent.png",
+        "image": "https://admareseafood.ca/images/MarioServing.jpg",
+        "description": "Ottawa's mobile seafood truck serving fish and chips, tacos, lobster rolls, and coastal favourites from 1993 Robertson Rd in Bells Corners.",
+        "servesCuisine": "Seafood",
+        "priceRange": "$$",
+        "email": "admare@outlook.com",
+        "foundingDate": "2013",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1993 Robertson Rd.",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "url": "https://ottawatourism.ca/fr/les-coulisses-dottawa/guide-de-la-cuisine-de-rue-ottawa",
-          "name": "Guide de la cuisine de rue a Ottawa"
+        "areaServed": {
+          "@type": "City",
+          "name": "Ottawa"
         },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "url": "https://www.daslokalottawa.com/fish-and-chips-in-and-around-ottawa/",
-          "name": "The complete list of the best fish and chips in and around Ottawa"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "url": "https://www.ctvnews.ca/ottawa/article/a-taste-of-summer-ottawas-food-truck-season-in-full-swing/",
-          "name": "A taste of summer: Ottawa's food truck season in full swing"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "url": "https://cusjc.ca/foodforott/2018/11/30/under-full-sail-how-ad-mare-withstands-the-ottawa-winter/",
-          "name": "Under full sail! How Ad Mare withstands the Ottawa winter"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "url": "https://cusjc.ca/foodforott/2018/11/30/city-driving-for-more-variety-with-call-for-new-food-trucks/",
-          "name": "City driving for more variety with call for new food trucks"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "url": "https://capitalcurrent.ca/archive/centretownnews/1997-2016/2014/04/10/long-winter-tough-on-food-trucks/",
-          "name": "Long winter tough on food trucks"
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "url": "https://www.ottawaxpress.ca/ottawa-vibrant-food-and-drink-scene-best-places/",
-          "name": "Ottawa's Vibrant Food and Drink Scene: Best Places to Visit"
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
-          "url": "https://www.guidesulysse.com/fr/fiche-contenu.aspx?id=103874",
-          "name": "Les food trucks d'Ottawa"
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:30",
+            "closes": "19:30"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/AdMareSeafood",
+          "https://www.instagram.com/Ad_Mare"
+        ],
+        "hasMap": "https://maps.google.com/?q=1993+Robertson+Rd,+Ottawa,+ON"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://admareseafood.ca/#website",
+        "url": "https://admareseafood.ca/",
+        "name": "Ad Mare Mobile Seafood Truck",
+        "publisher": {
+          "@id": "https://admareseafood.ca/#business"
         }
-      ]
-    }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://admareseafood.ca/media.html#webpage",
+        "name": "Ad Mare Media",
+        "url": "https://admareseafood.ca/media.html",
+        "description": "Articles, interviews, French-language features, and guides that mention Ad Mare Mobile Seafood.",
+        "isPartOf": {
+          "@id": "https://admareseafood.ca/#website"
+        },
+        "about": {
+          "@id": "https://admareseafood.ca/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://admareseafood.ca/images/MarioServing.jpg"
+        },
+        "mainEntity": {
+          "@id": "https://admareseafood.ca/media.html#mentions"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://admareseafood.ca/media.html#mentions",
+        "name": "Ad Mare media mentions",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.ctvnews.ca/ottawa/article/thirsty-here-are-some-of-the-best-patios-to-check-out-in-ottawa-this-summer/",
+            "name": "Thirsty? Here are some of the best patios to check out in Ottawa this summer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://ottawatourism.ca/fr/les-coulisses-dottawa/guide-de-la-cuisine-de-rue-ottawa",
+            "name": "Guide de la cuisine de rue a Ottawa"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.daslokalottawa.com/fish-and-chips-in-and-around-ottawa/",
+            "name": "The complete list of the best fish and chips in and around Ottawa"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.ctvnews.ca/ottawa/article/a-taste-of-summer-ottawas-food-truck-season-in-full-swing/",
+            "name": "A taste of summer: Ottawa's food truck season in full swing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://cusjc.ca/foodforott/2018/11/30/under-full-sail-how-ad-mare-withstands-the-ottawa-winter/",
+            "name": "Under full sail! How Ad Mare withstands the Ottawa winter"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://cusjc.ca/foodforott/2018/11/30/city-driving-for-more-variety-with-call-for-new-food-trucks/",
+            "name": "City driving for more variety with call for new food trucks"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://capitalcurrent.ca/archive/centretownnews/1997-2016/2014/04/10/long-winter-tough-on-food-trucks/",
+            "name": "Long winter tough on food trucks"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://www.ottawaxpress.ca/ottawa-vibrant-food-and-drink-scene-best-places/",
+            "name": "Ottawa's Vibrant Food and Drink Scene: Best Places to Visit"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "url": "https://www.guidesulysse.com/fr/fiche-contenu.aspx?id=103874",
+            "name": "Les food trucks d'Ottawa"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://admareseafood.ca/media.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://admareseafood.ca/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Media",
+            "item": "https://admareseafood.ca/media.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="style.css" />
