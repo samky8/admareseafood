@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://admareseafood.ca/sitemap.xml

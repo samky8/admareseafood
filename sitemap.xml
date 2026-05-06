@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://admareseafood.ca/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://admareseafood.ca/images/MarioServing.jpg</image:loc>
+      <image:title>Ad Mare Mobile Seafood Truck</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://admareseafood.ca/images/ad%20mare%20-%20truck.jpg</image:loc>
+      <image:title>Ad Mare seafood truck in Ottawa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://admareseafood.ca/images/Fish%20%26%20chips%20(Ad%20Mare%20chips%20-%20potato%2C%20sweet%20potato%2C%20and%20beets).jpg</image:loc>
+      <image:title>Ad Mare fish and chips</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://admareseafood.ca/about.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://admareseafood.ca/faq.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://admareseafood.ca/media.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://admareseafood.ca/images/MarioServing.jpg</image:loc>
+      <image:title>Ad Mare media page</image:title>
+    </image:image>
+  </url>
+</urlset>

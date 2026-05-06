@@ -1,1 +1,3 @@
 images/.gitkeep
+.live-preview*.log
+.live-preview-server.cjs

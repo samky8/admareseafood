@@ -10,6 +10,31 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+/* ---- Current hours indicator ---- */
+const updateCurrentHours = () => {
+  const now = new Date();
+  const currentDay = now.getDay();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  document.querySelectorAll('.hours-day').forEach(day => {
+    const isToday = Number(day.dataset.day) === currentDay;
+    const open = Number(day.dataset.open);
+    const close = Number(day.dataset.close);
+    const isOpenNow = isToday && Number.isFinite(open) && Number.isFinite(close) &&
+      currentMinutes >= open && currentMinutes < close;
+
+    day.classList.toggle('open-now', isOpenNow);
+    if (isOpenNow) {
+      day.setAttribute('aria-label', `${day.textContent.trim()} Open now`);
+    } else {
+      day.removeAttribute('aria-label');
+    }
+  });
+};
+
+updateCurrentHours();
+setInterval(updateCurrentHours, 60000);
+
 /* ---- Mobile nav toggle ---- */
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -103,6 +128,64 @@ if (form) {
   });
 }
 
+/* ---- Reviews carousel ---- */
+const reviewSlides = Array.from(document.querySelectorAll('[data-review-slide]'));
+const reviewDots = Array.from(document.querySelectorAll('[data-review-dot]'));
+const reviewPrev = document.querySelector('[data-review-prev]');
+const reviewNext = document.querySelector('[data-review-next]');
+const reviewCarousel = document.querySelector('.reviews-carousel');
+let currentReview = 0;
+let reviewTimer;
+
+const showReview = (index) => {
+  if (!reviewSlides.length) return;
+
+  currentReview = (index + reviewSlides.length) % reviewSlides.length;
+
+  reviewSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('active', slideIndex === currentReview);
+  });
+
+  reviewDots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === currentReview;
+    dot.classList.toggle('active', isActive);
+    dot.setAttribute('aria-selected', String(isActive));
+  });
+};
+
+const startReviewTimer = () => {
+  if (!reviewSlides.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  window.clearInterval(reviewTimer);
+  reviewTimer = window.setInterval(() => showReview(currentReview + 1), 6500);
+};
+
+const restartReviewTimer = () => {
+  window.clearInterval(reviewTimer);
+  startReviewTimer();
+};
+
+reviewPrev?.addEventListener('click', () => {
+  showReview(currentReview - 1);
+  restartReviewTimer();
+});
+
+reviewNext?.addEventListener('click', () => {
+  showReview(currentReview + 1);
+  restartReviewTimer();
+});
+
+reviewDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    showReview(Number(dot.dataset.reviewDot));
+    restartReviewTimer();
+  });
+});
+
+reviewCarousel?.addEventListener('mouseenter', () => window.clearInterval(reviewTimer));
+reviewCarousel?.addEventListener('mouseleave', startReviewTimer);
+showReview(0);
+startReviewTimer();
+
 /* ---- Button click ripple ---- */
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', function (e) {
@@ -137,8 +220,13 @@ if (backToTop) {
 const navLogo = document.querySelector('.nav-logo');
 if (navLogo) {
   navLogo.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const href = navLogo.getAttribute('href') || '';
+    const isSamePageTop = href === '#top' || href === '#' || href === window.location.pathname;
+
+    if (isSamePageTop) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 }
 
@@ -153,7 +241,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(
-  '.menu-card, .photo-cell, .about-grid, .catering-inner, .visit-grid, .swag-card, .contact-grid'
+  '.menu-card, .photo-cell, .about-grid, .reviews-inner, .catering-inner, .visit-grid, .swag-card, .contact-grid'
 ).forEach(el => {
   el.classList.add('fade-up');
   observer.observe(el);
