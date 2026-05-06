@@ -22,10 +22,15 @@ const updateCurrentHours = () => {
     const close = Number(day.dataset.close);
     const isOpenNow = isToday && Number.isFinite(open) && Number.isFinite(close) &&
       currentMinutes >= open && currentMinutes < close;
+    const isClosedNow = isToday && !isOpenNow;
 
+    day.classList.toggle('is-today', isToday);
     day.classList.toggle('open-now', isOpenNow);
+    day.classList.toggle('closed-now', isClosedNow);
     if (isOpenNow) {
       day.setAttribute('aria-label', `${day.textContent.trim()} Open now`);
+    } else if (isClosedNow) {
+      day.setAttribute('aria-label', `${day.textContent.trim()} Closed now`);
     } else {
       day.removeAttribute('aria-label');
     }
