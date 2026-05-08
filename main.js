@@ -10,6 +10,46 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+/* ---- Brand pronunciation audio ---- */
+const pronunciationButtons = document.querySelectorAll('.pronunciation-button');
+if (pronunciationButtons.length) {
+  const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+
+  if (!speechSupported) {
+    pronunciationButtons.forEach(button => {
+      button.disabled = true;
+      button.title = 'Audio pronunciation is not supported in this browser';
+    });
+  } else {
+    pronunciationButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance('ad Maré');
+        utterance.lang = 'en-US';
+        utterance.rate = 0.78;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        button.classList.add('is-speaking');
+        button.setAttribute('aria-label', 'Playing Ad Mare pronunciation');
+
+        utterance.addEventListener('end', () => {
+          button.classList.remove('is-speaking');
+          button.setAttribute('aria-label', 'Hear Ad Mare pronounced');
+        });
+
+        utterance.addEventListener('error', () => {
+          button.classList.remove('is-speaking');
+          button.setAttribute('aria-label', 'Hear Ad Mare pronounced');
+        });
+
+        window.speechSynthesis.speak(utterance);
+      });
+    });
+  }
+}
+
 /* ---- Current hours indicator ---- */
 const updateCurrentHours = () => {
   const now = new Date();

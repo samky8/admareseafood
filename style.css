@@ -228,6 +228,42 @@ p a:not(.btn):not(.social-link):focus-visible,
   width: auto;
   display: block;
 }
+.pronunciation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 0.12rem 0 0.22rem;
+  vertical-align: -0.35em;
+  border: 1px solid rgba(26,82,118,0.28);
+  border-radius: 999px;
+  color: var(--color-ocean);
+  background: rgba(255,255,255,0.58);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.pronunciation-button:hover,
+.pronunciation-button:focus-visible,
+.pronunciation-button.is-speaking {
+  color: var(--color-white);
+  background: var(--color-ocean);
+  border-color: var(--color-ocean);
+}
+.pronunciation-button:focus-visible {
+  outline: 2px solid var(--color-accent-lt);
+  outline-offset: 3px;
+}
+.pronunciation-button.is-speaking {
+  transform: scale(1.04);
+}
+.pronunciation-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
 .logo-text {
   font-family: var(--font-serif);
   font-size: 1.4rem;
@@ -1485,7 +1521,6 @@ p a:not(.btn):not(.social-link):focus-visible,
   .site-header { background: transparent; }
   .site-header.page-header { background: var(--color-navy); }
   .site-header.scrolled { background: var(--color-navy); }
-
   .nav-logo-img { height: 60px; }
 
   /* About */
