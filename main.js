@@ -13,66 +13,50 @@ onScroll();
 /* ---- Brand pronunciation audio ---- */
 const pronunciationButtons = document.querySelectorAll('.pronunciation-button');
 if (pronunciationButtons.length) {
-  const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
-  const pronunciationText = 'Ahd MAH ray';
-  let preferredPronunciationVoice = null;
+  let currentPronunciationAudio = null;
 
-  const updatePreferredPronunciationVoice = () => {
-    if (!speechSupported) return;
-
-    const voices = window.speechSynthesis.getVoices();
-    preferredPronunciationVoice = voices.find(voice => voice.lang === 'en-CA') ||
-      voices.find(voice => voice.lang === 'en-US' && /google|samantha|alex|daniel|natural/i.test(voice.name)) ||
-      voices.find(voice => voice.lang === 'en-US') ||
-      voices.find(voice => voice.lang.startsWith('en-')) ||
-      null;
+  const resetPronunciationButton = (button) => {
+    button.classList.remove('is-speaking');
+    button.setAttribute('aria-label', 'Hear Ad Mare pronounced');
   };
 
-  if (!speechSupported) {
-    pronunciationButtons.forEach(button => {
-      button.disabled = true;
-      button.title = 'Audio pronunciation is not supported in this browser';
-    });
-  } else {
-    updatePreferredPronunciationVoice();
-    if (typeof window.speechSynthesis.addEventListener === 'function') {
-      window.speechSynthesis.addEventListener('voiceschanged', updatePreferredPronunciationVoice);
-    } else {
-      window.speechSynthesis.onvoiceschanged = updatePreferredPronunciationVoice;
-    }
+  pronunciationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (currentPronunciationAudio) {
+        currentPronunciationAudio.pause();
+        currentPronunciationAudio.currentTime = 0;
+      }
 
-    pronunciationButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        window.speechSynthesis.cancel();
+      pronunciationButtons.forEach(resetPronunciationButton);
 
-        updatePreferredPronunciationVoice();
+      const audio = new Audio('AdMare_audio.mp3');
+      currentPronunciationAudio = audio;
 
-        const utterance = new SpeechSynthesisUtterance(pronunciationText);
-        utterance.lang = preferredPronunciationVoice ? preferredPronunciationVoice.lang : 'en-CA';
-        if (preferredPronunciationVoice) {
-          utterance.voice = preferredPronunciationVoice;
+      button.classList.add('is-speaking');
+      button.setAttribute('aria-label', 'Playing Ad Mare pronunciation');
+
+      audio.addEventListener('ended', () => {
+        resetPronunciationButton(button);
+        if (currentPronunciationAudio === audio) {
+          currentPronunciationAudio = null;
         }
-        utterance.rate = 0.72;
-        utterance.pitch = 1;
-        utterance.volume = 1;
+      });
 
-        button.classList.add('is-speaking');
-        button.setAttribute('aria-label', 'Playing Ad Mare pronunciation');
+      audio.addEventListener('error', () => {
+        resetPronunciationButton(button);
+        if (currentPronunciationAudio === audio) {
+          currentPronunciationAudio = null;
+        }
+      });
 
-        utterance.addEventListener('end', () => {
-          button.classList.remove('is-speaking');
-          button.setAttribute('aria-label', 'Hear Ad Mare pronounced');
-        });
-
-        utterance.addEventListener('error', () => {
-          button.classList.remove('is-speaking');
-          button.setAttribute('aria-label', 'Hear Ad Mare pronounced');
-        });
-
-        window.speechSynthesis.speak(utterance);
+      audio.play().catch(() => {
+        resetPronunciationButton(button);
+        if (currentPronunciationAudio === audio) {
+          currentPronunciationAudio = null;
+        }
       });
     });
-  }
+  });
 }
 
 /* ---- Current hours indicator ---- */
