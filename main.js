@@ -14,6 +14,19 @@ onScroll();
 const pronunciationButtons = document.querySelectorAll('.pronunciation-button');
 if (pronunciationButtons.length) {
   const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+  const pronunciationText = 'Ahd MAH ray';
+  let preferredPronunciationVoice = null;
+
+  const updatePreferredPronunciationVoice = () => {
+    if (!speechSupported) return;
+
+    const voices = window.speechSynthesis.getVoices();
+    preferredPronunciationVoice = voices.find(voice => voice.lang === 'en-CA') ||
+      voices.find(voice => voice.lang === 'en-US' && /google|samantha|alex|daniel|natural/i.test(voice.name)) ||
+      voices.find(voice => voice.lang === 'en-US') ||
+      voices.find(voice => voice.lang.startsWith('en-')) ||
+      null;
+  };
 
   if (!speechSupported) {
     pronunciationButtons.forEach(button => {
@@ -21,13 +34,25 @@ if (pronunciationButtons.length) {
       button.title = 'Audio pronunciation is not supported in this browser';
     });
   } else {
+    updatePreferredPronunciationVoice();
+    if (typeof window.speechSynthesis.addEventListener === 'function') {
+      window.speechSynthesis.addEventListener('voiceschanged', updatePreferredPronunciationVoice);
+    } else {
+      window.speechSynthesis.onvoiceschanged = updatePreferredPronunciationVoice;
+    }
+
     pronunciationButtons.forEach(button => {
       button.addEventListener('click', () => {
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance('ad Mawré');
-        utterance.lang = 'en-US';
-        utterance.rate = 0.78;
+        updatePreferredPronunciationVoice();
+
+        const utterance = new SpeechSynthesisUtterance(pronunciationText);
+        utterance.lang = preferredPronunciationVoice ? preferredPronunciationVoice.lang : 'en-CA';
+        if (preferredPronunciationVoice) {
+          utterance.voice = preferredPronunciationVoice;
+        }
+        utterance.rate = 0.72;
         utterance.pitch = 1;
         utterance.volume = 1;
 
