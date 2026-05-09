@@ -25,7 +25,7 @@ if (pronunciationButtons.length) {
       button.addEventListener('click', () => {
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance('ad Maré');
+        const utterance = new SpeechSynthesisUtterance('ad Mawré');
         utterance.lang = 'en-US';
         utterance.rate = 0.78;
         utterance.pitch = 1;
