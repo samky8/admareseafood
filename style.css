@@ -817,6 +817,9 @@ p a:not(.btn):not(.social-link):focus-visible,
 }
 /* First photo wider on mobile */
 .photo-cell:nth-child(1) { grid-column: span 2; aspect-ratio: 16 / 8; }
+@media (max-width: 899.98px) {
+  .photo-cell:nth-child(8) { grid-column: span 2; aspect-ratio: 16 / 8; }
+}
 .photo-placeholder::after {
   content: "📸";
   display: flex;
