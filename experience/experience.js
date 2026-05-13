@@ -1,4 +1,4 @@
-const GOOGLE_REVIEW_URL = 'https://www.google.com/search?q=Ad+Mare+Seafood+Truck&ludocid=14594373912982703449#lrd=0x4cce04547990bcc9:0xca89a1bfe28fcd59,3';
+const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJybyQeVQEzkwRWc2P4r-hico';
 const HOME_URL = '../index.html';
 
 const googleReviewLink = document.querySelector('[data-google-review-link]');
