@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Ad Mare Experience</title>
+  <meta name="description" content="Tell Ad Mare Seafood how your visit was today, share a Google review, or send private feedback to the food truck team." />
+  <meta name="robots" content="noindex, follow, noarchive, max-image-preview:large" />
+  <meta name="author" content="Ad Mare Mobile Seafood" />
+  <link rel="canonical" href="https://admareseafood.ca/experience/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-transparent-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="Ad Mare Mobile Seafood Truck" />
+  <meta property="og:url" content="https://admareseafood.ca/experience/" />
+  <meta property="og:title" content="Share Your Ad Mare Experience" />
+  <meta property="og:description" content="Loved your visit? Leave a review. Could it have been better? Send private feedback." />
+  <meta property="og:image" content="https://admareseafood.ca/images/Truck4AdMareBestSeafoodOttawa.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Share Your Ad Mare Experience" />
+  <meta name="twitter:description" content="A quick way to review Ad Mare or send private feedback." />
+  <meta name="twitter:image" content="https://admareseafood.ca/images/Truck4AdMareBestSeafoodOttawa.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="../images/Ad Mare Transparent.png" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5BCPD6RD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VY5BCPD6RD');
+  </script>
+</head>
+<body class="experience-page">
+  <main class="experience-shell" id="top">
+    <div class="experience-watermark" aria-hidden="true"></div>
+
+    <header class="experience-header">
+      <a href="../index.html" class="experience-logo" aria-label="Go to Ad Mare homepage">
+        <img src="../images/Ad Mare Transparent.png" alt="Ad Mare" />
+      </a>
+    </header>
+
+    <section class="experience-hero" aria-labelledby="experience-title">
+      <p class="experience-kicker">Ad Mare Seafood</p>
+      <h1 id="experience-title">How was your experience?</h1>
+      <p>Your feedback helps us improve.</p>
+
+      <div class="experience-options" data-experience-options aria-label="Choose your feedback path">
+        <a href="https://www.google.com/search?q=Ad+Mare+Seafood+Truck&ludocid=14594373912982703449#lrd=0x4cce04547990bcc9:0xca89a1bfe28fcd59,3" class="experience-card experience-card-loved" data-google-review-link target="_blank" rel="noopener">
+          <span class="experience-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </span>
+          <span class="experience-card-copy">
+            <strong>Loved it</strong>
+            <span>Share your experience and help support our local food truck.</span>
+          </span>
+        </a>
+
+        <button class="experience-card" type="button" data-feedback-toggle aria-controls="experienceFeedback" aria-expanded="false">
+          <span class="experience-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+              <path d="M8 9h8"></path>
+              <path d="M8 13h5"></path>
+            </svg>
+          </span>
+          <span class="experience-card-copy">
+            <strong>Could've been better</strong>
+            <span>Send private feedback.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="experience-feedback" id="experienceFeedback" aria-labelledby="feedback-title" hidden>
+      <div class="experience-form-card">
+        <div class="experience-form-heading">
+          <h2 id="feedback-title">Tell us what happened</h2>
+          <p>We read every message.</p>
+        </div>
+
+        <form class="contact-form experience-form" id="experienceForm" action="https://formspree.io/f/xlgabaek" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="experienceName">Name <span class="optional">(optional)</span></label>
+              <input type="text" id="experienceName" name="name" autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <label for="experienceEmail">Email <span class="optional">(optional)</span></label>
+              <input type="email" id="experienceEmail" name="email" autocomplete="email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <fieldset class="feedback-categories">
+            <legend><span class="feedback-category-label">Category <span class="optional">(optional)</span></span></legend>
+            <label><input type="checkbox" name="category" value="Food quality" /> <span>Food quality</span></label>
+            <label><input type="checkbox" name="category" value="Wait time" /> <span>Wait time</span></label>
+            <label><input type="checkbox" name="category" value="Order issue" /> <span>Order issue</span></label>
+            <label><input type="checkbox" name="category" value="Staff interaction" /> <span>Staff interaction</span></label>
+            <label><input type="checkbox" name="category" value="Pricing" /> <span>Pricing</span></label>
+            <label><input type="checkbox" name="category" value="Other" /> <span>Other</span></label>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="experienceMessage">Message <span class="required">*</span></label>
+            <textarea id="experienceMessage" name="message" required rows="5" placeholder="A few details help us make it right."></textarea>
+          </div>
+
+          <input type="hidden" name="subject" value="Private experience feedback" />
+          <input type="hidden" name="_subject" value="New private feedback from Ad Mare experience page" />
+          <button type="submit" class="btn btn-primary btn-full">Send</button>
+          <p class="form-status" id="experienceStatus" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="experience-review-redirect" id="feedbackRedirect" aria-labelledby="feedback-redirect-title" hidden>
+      <div class="experience-redirect-card">
+        <h2 id="feedback-redirect-title">Thank you.</h2>
+        <p>We genuinely appreciate the feedback.</p>
+        <a href="../index.html" class="btn btn-primary btn-full" id="feedbackRedirectButton">
+          Redirecting to Ad Mare website... (<span data-feedback-countdown>5</span>)
+        </a>
+      </div>
+    </section>
+
+    <section class="experience-review-redirect" id="reviewRedirect" aria-labelledby="review-redirect-title" hidden>
+      <div class="experience-redirect-card">
+        <h2 id="review-redirect-title">Thank you for your feedback!</h2>
+        <p>Please leave us a review to support local and help others discover us. ❤️</p>
+        <a href="https://www.google.com/search?q=Ad+Mare+Seafood+Truck&ludocid=14594373912982703449#lrd=0x4cce04547990bcc9:0xca89a1bfe28fcd59,3" class="btn btn-primary btn-full" id="reviewRedirectButton" target="_blank" rel="noopener">
+          Redirecting to Google reviews... (<span data-review-countdown>5</span>)
+        </a>
+      </div>
+    </section>
+
+    <p class="experience-footer-note">Thanks for supporting local. 🌊</p>
+    <p class="experience-copyright">© Ad Mare Mobile Seafood 2026. Ottawa, ON.</p>
+  </main>
+
+  <script src="experience.js" defer></script>
+</body>
+</html>
