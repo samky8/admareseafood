@@ -38,7 +38,7 @@ if (feedbackRedirectButton) {
 }
 
 const startRedirectCountdown = ({ button, countdown, label, url, timerSetter }) => {
-  let secondsRemaining = 5;
+  let secondsRemaining = 3;
   countdown.textContent = String(secondsRemaining);
   button.textContent = '';
   button.append(`${label}... (`);
