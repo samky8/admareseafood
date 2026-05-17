@@ -63,10 +63,19 @@ if (pronunciationButtons.length) {
 const updateCurrentHours = () => {
   const now = new Date();
   const currentDay = now.getDay();
+  const currentDate = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, '0'),
+    String(now.getDate()).padStart(2, '0')
+  ].join('-');
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
   document.querySelectorAll('.hours-day').forEach(day => {
-    const isToday = Number(day.dataset.day) === currentDay;
+    const isExactDate = day.dataset.date === currentDate;
+    const isSkippedDate = day.dataset.skipDate === currentDate;
+    const isToday = day.dataset.date
+      ? isExactDate
+      : Number(day.dataset.day) === currentDay && !isSkippedDate;
     const open = Number(day.dataset.open);
     const close = Number(day.dataset.close);
     const isOpenNow = isToday && Number.isFinite(open) && Number.isFinite(close) &&
