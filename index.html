@@ -198,9 +198,9 @@
         <li><a href="#visit" class="nav-cta">Visit</a></li>
       </ul>
     </nav>
-    <div class="holiday-banner" role="status" aria-label="Victoria Day hours">
+    <div class="holiday-banner" role="status" aria-label="Holiday and exception hours">
       <div class="holiday-banner-track">
-        <span><strong>🎉 Open Victoria Day Monday</strong> <a href="#hours">We’re open this Monday, May 18, from 11:30 am–7:30 pm at 1993 Robertson Rd. Regular Monday closures resume after the holiday.</a></span>
+        <span><strong>🎉 Open Victoria Day Monday</strong> <a href="#hours">We’re open Monday, May 18, from 11:30 am–7:30 pm at 1993 Robertson Rd. Closed Tuesday, May 19, by exception. Regular Monday closures resume after the holiday.</a></span>
       </div>
     </div>
   </header>
@@ -623,7 +623,12 @@
             <span class="hours-day-name">Regular Mondays:</span>
             <span class="hours-day-time">Closed</span>
           </li>
-          <li class="hours-day" data-day="2" data-open="690" data-close="1170">
+          <li class="hours-day hours-day-exception hours-day-closed-exception" data-date="2026-05-19">
+            <span class="hours-open-indicator" aria-hidden="true"></span>
+            <span class="hours-day-name">Tuesday, May 19:</span>
+            <span class="hours-day-time">Closed (exception)</span>
+          </li>
+          <li class="hours-day" data-day="2" data-skip-date="2026-05-19" data-open="690" data-close="1170">
             <span class="hours-open-indicator" aria-hidden="true"></span>
             <span class="hours-day-name">Tuesday:</span>
             <span class="hours-day-time">11:30 am - 7:30 pm</span>
