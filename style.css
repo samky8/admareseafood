@@ -327,55 +327,6 @@ p a:not(.btn):not(.social-link):focus-visible,
   transition: all 0.3s;
 }
 
-.holiday-banner {
-  overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 34px),
-    linear-gradient(90deg, #08385f, #0d2137 48%, #1a5276);
-  color: var(--color-white);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-}
-.holiday-banner-track {
-  display: flex;
-  align-items: center;
-  min-height: 2.15rem;
-  padding-inline: max(1rem, calc((100vw - var(--max-width)) / 2));
-  white-space: nowrap;
-}
-.holiday-banner-track span {
-  display: inline-block;
-  font-size: 0.86rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: 0;
-  color: rgba(255,255,255,0.92);
-}
-.holiday-banner-track strong {
-  color: var(--color-accent-lt);
-  margin-right: 0.35rem;
-}
-@media (max-width: 899.98px) {
-  .holiday-banner-track span {
-    min-width: max-content;
-    padding-right: 2rem;
-    animation: holidayBannerScroll 18s linear infinite;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .holiday-banner-track {
-    overflow-x: auto;
-    white-space: normal;
-  }
-  .holiday-banner-track span {
-    animation: none;
-  }
-}
-@keyframes holidayBannerScroll {
-  0%, 12% { transform: translateX(0); }
-  88%, 100% { transform: translateX(calc(-100% + 100vw - 2rem)); }
-}
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -972,21 +923,6 @@ p a:not(.btn):not(.social-link):focus-visible,
   grid-template-columns: 1rem minmax(6.5rem, 1fr) auto;
   gap: 0.65rem;
   align-items: center;
-}
-.hours-day-exception {
-  margin-block: 0.15rem;
-  padding: 0.55rem 0.7rem;
-  border: 1px solid rgba(224,123,57,0.32);
-  border-radius: var(--radius);
-  background: linear-gradient(90deg, rgba(224,123,57,0.16), rgba(26,122,122,0.08));
-}
-.hours-day-closed-exception {
-  border-color: rgba(210,42,42,0.28);
-  background: linear-gradient(90deg, rgba(210,42,42,0.12), rgba(13,33,55,0.04));
-}
-.hours-day-exception .hours-day-name,
-.hours-day-exception .hours-day-time {
-  color: var(--color-navy);
 }
 .hours-day.is-today {
   font-weight: 700;
