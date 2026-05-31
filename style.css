@@ -28,6 +28,7 @@
   --shadow-lg:  0 8px 40px rgba(13,33,55,0.16);
 
   --nav-height:  60px;
+  --notice-height: 40px;
   --max-width:   1160px;
   --section-gap: 3.5rem;
 }
@@ -281,7 +282,7 @@ p a:not(.btn):not(.social-link):focus-visible,
   align-items: stretch;
   gap: 0;
   position: absolute;
-  top: calc(var(--nav-height) + 2.15rem);
+  top: calc(var(--nav-height) + var(--notice-height) + 2.15rem);
   left: 0; right: 0;
   background: var(--color-navy);
   padding: 0.75rem 1.25rem 1.25rem;
@@ -339,7 +340,7 @@ p a:not(.btn):not(.social-link):focus-visible,
     linear-gradient(160deg, rgba(13,33,55,0.88) 0%, rgba(26,82,118,0.78) 60%, rgba(13,33,55,0.92) 100%),
     url('images/hero.jpg') center/cover no-repeat;
   background-color: var(--color-navy);
-  padding-top: calc(var(--nav-height) + 2.15rem);
+  padding-top: calc(var(--nav-height) + var(--notice-height) + 2.15rem);
 }
 .hero-overlay {
   position: absolute;
@@ -1867,6 +1868,7 @@ p a:not(.btn):not(.social-link):focus-visible,
   :root {
     --section-gap: 6rem;
     --nav-height: 70px;
+    --notice-height: 38px;
   }
 
   /* Nav — desktop links */
