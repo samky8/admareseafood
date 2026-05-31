@@ -413,6 +413,21 @@ p a:not(.btn):not(.social-link):focus-visible,
 .hero-wave svg { width: 100%; display: block; }
 
 /* ============================================================
+   CLOSURE NOTICE BANNER
+   ============================================================ */
+.closure-notice {
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding-block: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+.closure-notice a { color: var(--color-white); text-decoration: underline; }
+
+/* ============================================================
    ANNOUNCEMENT BANNER
    ============================================================ */
 .announcement {
