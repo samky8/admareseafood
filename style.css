@@ -28,7 +28,7 @@
   --shadow-lg:  0 8px 40px rgba(13,33,55,0.16);
 
   --nav-height:  60px;
-  --notice-height: 40px;
+  --notice-height: 62px;
   --max-width:   1160px;
   --section-gap: 3.5rem;
 }
@@ -419,11 +419,11 @@ p a:not(.btn):not(.social-link):focus-visible,
 .closure-notice {
   background: var(--color-accent);
   color: var(--color-white);
-  padding-block: 0.75rem;
+  padding-block: 0.55rem;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0.01em;
 }
 .closure-notice a { color: var(--color-white); text-decoration: underline; }
@@ -1225,7 +1225,7 @@ p a:not(.btn):not(.social-link):focus-visible,
    FAQ PAGE
    ============================================================ */
 .page-main {
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + var(--notice-height));
   background: var(--color-bg);
 }
 .page-hero {
