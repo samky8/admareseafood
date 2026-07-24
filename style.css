@@ -1651,6 +1651,7 @@ p a:not(.btn):not(.social-link):focus-visible,
   padding-top: 0.8rem;
 }
 .experience-form-card {
+  position: relative;
   border-radius: 22px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98)),
@@ -1658,8 +1659,32 @@ p a:not(.btn):not(.social-link):focus-visible,
   box-shadow: 0 18px 52px rgba(13,33,55,0.14);
   overflow: hidden;
 }
+.experience-feedback-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(13,33,55,0.12);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.86);
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.experience-feedback-close:hover,
+.experience-feedback-close:focus-visible {
+  border-color: rgba(224,123,57,0.32);
+  background: var(--color-white);
+  color: var(--color-orange);
+  transform: translateY(-1px);
+}
 .experience-form-heading {
-  padding: 1.35rem 1.35rem 0;
+  padding: 1.35rem 4rem 0;
   text-align: center;
 }
 .experience-form-heading h2,
@@ -1809,7 +1834,7 @@ p a:not(.btn):not(.social-link):focus-visible,
     padding: 1.2rem 1.5rem 1.5rem;
   }
   .experience-form-heading {
-    padding-inline: 1.5rem;
+    padding-inline: 4rem;
   }
 }
 

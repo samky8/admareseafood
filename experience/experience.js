@@ -7,6 +7,7 @@ if (googleReviewLink) {
 }
 
 const feedbackToggle = document.querySelector('[data-feedback-toggle]');
+const feedbackClose = document.querySelector('[data-feedback-close]');
 const feedbackSection = document.getElementById('experienceFeedback');
 const feedbackForm = document.getElementById('experienceForm');
 const feedbackStatus = document.getElementById('experienceStatus');
@@ -56,6 +57,17 @@ const startRedirectCountdown = ({ button, countdown, label, url, timerSetter }) 
   }, 1000);
 
   timerSetter(timer);
+};
+
+const closeFeedbackForm = () => {
+  if (feedbackSection) {
+    feedbackSection.hidden = true;
+  }
+  if (experienceOptions) {
+    experienceOptions.hidden = false;
+  }
+  feedbackToggle?.setAttribute('aria-expanded', 'false');
+  feedbackToggle?.focus({ preventScroll: true });
 };
 
 googleReviewLink?.addEventListener('click', (event) => {
@@ -111,7 +123,7 @@ feedbackToggle?.addEventListener('click', () => {
     feedbackRedirect.hidden = true;
   }
   if (experienceOptions) {
-    experienceOptions.hidden = false;
+    experienceOptions.hidden = true;
   }
   window.clearInterval(reviewTimer);
   window.clearInterval(feedbackTimer);
@@ -122,6 +134,10 @@ feedbackToggle?.addEventListener('click', () => {
   window.setTimeout(() => {
     document.getElementById('experienceMessage')?.focus({ preventScroll: true });
   }, 450);
+});
+
+feedbackClose?.addEventListener('click', () => {
+  closeFeedbackForm();
 });
 
 feedbackForm?.addEventListener('submit', async (event) => {
