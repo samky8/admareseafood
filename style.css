@@ -413,6 +413,21 @@ p a:not(.btn):not(.social-link):focus-visible,
 }
 .hero-wave svg { width: 100%; display: block; }
 
+/* Temporary hours notice, matching previous closure banners. */
+.closure-notice {
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding-block: 0.55rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+.closure-notice a { color: var(--color-white); text-decoration: underline; }
+#hours { scroll-margin-top: calc(var(--nav-height) + var(--notice-height) + 1rem); }
+.hours-day-exception { background: var(--color-sand); border-radius: 0.5rem; }
+
 /* ============================================================
    ANNOUNCEMENT BANNER
    ============================================================ */
