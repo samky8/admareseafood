@@ -28,7 +28,6 @@
   --shadow-lg:  0 8px 40px rgba(13,33,55,0.16);
 
   --nav-height:  60px;
-  --notice-height: 62px;
   --max-width:   1160px;
   --section-gap: 3.5rem;
 }
@@ -282,7 +281,7 @@ p a:not(.btn):not(.social-link):focus-visible,
   align-items: stretch;
   gap: 0;
   position: absolute;
-  top: calc(var(--nav-height) + var(--notice-height) + 2.15rem);
+  top: calc(var(--nav-height) + 2.15rem);
   left: 0; right: 0;
   background: var(--color-navy);
   padding: 0.75rem 1.25rem 1.25rem;
@@ -340,7 +339,7 @@ p a:not(.btn):not(.social-link):focus-visible,
     linear-gradient(160deg, rgba(13,33,55,0.88) 0%, rgba(26,82,118,0.78) 60%, rgba(13,33,55,0.92) 100%),
     url('images/hero.jpg') center/cover no-repeat;
   background-color: var(--color-navy);
-  padding-top: calc(var(--nav-height) + var(--notice-height) + 2.15rem);
+  padding-top: calc(var(--nav-height) + 2.15rem);
 }
 .hero-overlay {
   position: absolute;
@@ -413,20 +412,7 @@ p a:not(.btn):not(.social-link):focus-visible,
 }
 .hero-wave svg { width: 100%; display: block; }
 
-/* Temporary hours notice, matching previous closure banners. */
-.closure-notice {
-  background: var(--color-accent);
-  color: var(--color-white);
-  padding-block: 0.55rem;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
-.closure-notice a { color: var(--color-white); text-decoration: underline; }
-#hours { scroll-margin-top: calc(var(--nav-height) + var(--notice-height) + 1rem); }
-.hours-day-exception { background: var(--color-sand); border-radius: 0.5rem; }
+#hours { scroll-margin-top: calc(var(--nav-height) + 1rem); }
 
 /* ============================================================
    ANNOUNCEMENT BANNER
@@ -1225,7 +1211,7 @@ p a:not(.btn):not(.social-link):focus-visible,
    FAQ PAGE
    ============================================================ */
 .page-main {
-  padding-top: calc(var(--nav-height) + var(--notice-height));
+  padding-top: var(--nav-height);
   background: var(--color-bg);
 }
 .page-hero {
@@ -1893,7 +1879,6 @@ p a:not(.btn):not(.social-link):focus-visible,
   :root {
     --section-gap: 6rem;
     --nav-height: 70px;
-    --notice-height: 38px;
   }
 
   /* Nav — desktop links */
