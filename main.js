@@ -60,15 +60,26 @@ if (pronunciationButtons.length) {
 }
 
 /* ---- Current hours indicator ---- */
+// Explicit Toronto offsets keep the temporary notice independent of visitor timezone.
+const temporaryClosureStart = Date.parse('2026-10-13T00:00:00-04:00');
+const temporaryClosureEnd = Date.parse('2026-10-13T20:00:00-04:00');
+const torontoClock = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/Toronto', year: 'numeric', month: '2-digit',
+  day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+});
 const updateCurrentHours = () => {
   const now = new Date();
-  const currentDay = now.getDay();
-  const currentDate = [
-    now.getFullYear(),
-    String(now.getMonth() + 1).padStart(2, '0'),
-    String(now.getDate()).padStart(2, '0')
-  ].join('-');
-  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const parts = Object.fromEntries(torontoClock.formatToParts(now).map(part => [part.type, part.value]));
+  const currentDate = `${parts.year}-${parts.month}-${parts.day}`;
+  const currentDay = new Date(`${currentDate}T12:00:00Z`).getUTCDay();
+  const currentMinutes = Number(parts.hour) * 60 + Number(parts.minute);
+  const isTemporaryClosure = now.getTime() >= temporaryClosureStart && now.getTime() < temporaryClosureEnd;
+
+  document.querySelectorAll('[data-temporary-closure]').forEach(notice => {
+    notice.hidden = !isTemporaryClosure;
+  });
+  const seasonBadge = document.querySelector('.season-badge');
+  if (seasonBadge) seasonBadge.hidden = isTemporaryClosure;
 
   document.querySelectorAll('.hours-day').forEach(day => {
     const isExactDate = day.dataset.date === currentDate;
@@ -78,7 +89,13 @@ const updateCurrentHours = () => {
       : Number(day.dataset.day) === currentDay && !isSkippedDate;
     const open = Number(day.dataset.open);
     const close = Number(day.dataset.close);
-    const isOpenNow = isToday && Number.isFinite(open) && Number.isFinite(close) &&
+    const timeLabel = day.querySelector('.hours-day-time');
+    if (timeLabel) {
+      if (!timeLabel.dataset.regularHours) timeLabel.dataset.regularHours = timeLabel.textContent;
+      timeLabel.textContent = isToday && isTemporaryClosure
+        ? 'Closed today (temporary)' : timeLabel.dataset.regularHours;
+    }
+    const isOpenNow = !isTemporaryClosure && isToday && Number.isFinite(open) && Number.isFinite(close) &&
       currentMinutes >= open && currentMinutes < close;
     const isClosedNow = isToday && !isOpenNow;
 
@@ -97,6 +114,13 @@ const updateCurrentHours = () => {
 
 updateCurrentHours();
 setInterval(updateCurrentHours, 60000);
+// Expire on time even if the page stays open; recheck when a sleeping tab returns.
+const closureTimeRemaining = temporaryClosureEnd - Date.now();
+if (closureTimeRemaining > 0 && closureTimeRemaining <= 2147483647) {
+  setTimeout(updateCurrentHours, closureTimeRemaining);
+}
+document.addEventListener('visibilitychange', updateCurrentHours);
+window.addEventListener('focus', updateCurrentHours);
 
 /* ---- Mobile nav toggle ---- */
 const toggle = document.querySelector('.nav-toggle');

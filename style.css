@@ -54,6 +54,27 @@ button {
 }
 
 /* ---- Utilities ---- */
+.closure-banner {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  background: #ffe3bd;
+  color: var(--color-navy);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.closure-banner strong,
+.closure-banner span { display: block; }
+.closure-banner strong { font-size: 1.25rem; }
+.closure-notice {
+  padding: 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: #ffe3bd;
+  color: var(--color-navy);
+}
+
 .container {
   width: 92%;
   max-width: var(--max-width);
