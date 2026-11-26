@@ -28,6 +28,7 @@
   --shadow-lg:  0 8px 40px rgba(13,33,55,0.16);
 
   --nav-height:  60px;
+  --opensync-banner-height: 0px;
   --max-width:   1160px;
   --section-gap: 3.5rem;
 }
@@ -221,9 +222,16 @@ p a:not(.btn):not(.social-link):focus-visible,
 /* ============================================================
    NAV — mobile hamburger by default
    ============================================================ */
+body > [data-opensync][data-type="banner"] {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 101;
+  width: 100%;
+}
+
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--opensync-banner-height); left: 0; right: 0;
   z-index: 100;
   background: var(--color-navy);
   transition: box-shadow 0.3s;
@@ -360,7 +368,7 @@ p a:not(.btn):not(.social-link):focus-visible,
     linear-gradient(160deg, rgba(13,33,55,0.88) 0%, rgba(26,82,118,0.78) 60%, rgba(13,33,55,0.92) 100%),
     url('images/hero.jpg') center/cover no-repeat;
   background-color: var(--color-navy);
-  padding-top: calc(var(--nav-height) + 2.15rem);
+  padding-top: calc(var(--nav-height) + var(--opensync-banner-height) + 2.15rem);
 }
 .hero-overlay {
   position: absolute;
@@ -433,7 +441,7 @@ p a:not(.btn):not(.social-link):focus-visible,
 }
 .hero-wave svg { width: 100%; display: block; }
 
-#hours { scroll-margin-top: calc(var(--nav-height) + 1rem); }
+#hours { scroll-margin-top: calc(var(--nav-height) + var(--opensync-banner-height) + 1rem); }
 
 /* ============================================================
    ANNOUNCEMENT BANNER
@@ -1150,7 +1158,8 @@ p a:not(.btn):not(.social-link):focus-visible,
    FOOTER
    ============================================================ */
 .site-footer {
-  background: #081624;
+  --footer-background: #081624;
+  background: var(--footer-background);
   color: rgba(255,255,255,0.6);
 }
 .footer-inner {
@@ -1158,6 +1167,18 @@ p a:not(.btn):not(.social-link):focus-visible,
   flex-direction: column;
   gap: 2rem;
   padding-block: 2.5rem;
+}
+.footer-brand {
+  min-width: 0;
+}
+.footer-brand > [data-opensync][data-type="status"] {
+  width: min(100%, 420px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--footer-background);
+}
+.footer-brand > [data-opensync][data-type="status"]:not(:empty) {
+  margin-top: 10px;
 }
 .footer-brand .logo-text {
   font-family: var(--font-serif);
@@ -1232,7 +1253,7 @@ p a:not(.btn):not(.social-link):focus-visible,
    FAQ PAGE
    ============================================================ */
 .page-main {
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + var(--opensync-banner-height));
   background: var(--color-bg);
 }
 .page-hero {

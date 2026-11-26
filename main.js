@@ -4,6 +4,22 @@
 
 /* ---- Sticky nav scroll effect ---- */
 const header = document.querySelector('.site-header');
+
+/* ---- Keep the fixed navigation below an active OpenSync banner ---- */
+const openSyncBanner = document.querySelector('[data-opensync][data-type="banner"]');
+if (openSyncBanner) {
+  const updateOpenSyncBannerHeight = () => {
+    const height = Math.max(0, openSyncBanner.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--opensync-banner-height', `${height}px`);
+  };
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(updateOpenSyncBannerHeight).observe(openSyncBanner);
+  }
+  window.addEventListener('resize', updateOpenSyncBannerHeight, { passive: true });
+  updateOpenSyncBannerHeight();
+}
+
 const onScroll = () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 };

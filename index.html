@@ -180,6 +180,9 @@
 </head>
 <body>
 
+  <!-- Place directly above the site header -->
+  <div data-opensync="dc873add-34f4-46dc-8ff1-dd603dab96df" data-type="banner"></div>
+
   <!-- ============================================================
        NAV
   ============================================================ -->
@@ -343,8 +346,8 @@
     <div class="container hours-inner">
       <p class="section-label centered">Seasonal hours</p>
       <h2 class="centered">&#127907; Hours</h2>
-      <p class="closure-notice centered"><strong>Closed for the season. See you in spring!</strong></p>
-      <p class="section-intro centered">Thank you for spending the season with us. We'll share our spring reopening date and hours on <a href="https://www.facebook.com/AdMareSeafood" target="_blank" rel="noopener">Facebook</a> and <a href="https://www.instagram.com/Ad_Mare" target="_blank" rel="noopener">Instagram</a>.</p>
+      <!-- Place in the business hours section -->
+      <div data-opensync="dc873add-34f4-46dc-8ff1-dd603dab96df" data-type="hours"></div>
     </div>
     <div class="section-wave">
       <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -675,6 +678,7 @@
       <div class="footer-brand">
         <img src="images/Ad Mare banner transparent.png" alt="Ad Mare banner" class="footer-banner-img" loading="lazy" decoding="async" />
         <p>Ottawa's gourmet seafood truck, since 2013. Closed for the season. See you in spring!</p>
+        <div data-opensync="dc873add-34f4-46dc-8ff1-dd603dab96df" data-type="status"></div>
       </div>
       <nav class="footer-nav">
         <a href="about.html">About</a>
@@ -717,5 +721,7 @@
   </a>
 
   <script src="main.js" defer></script>
+  <!-- Load OpenSync once, after the three placements -->
+  <script src="https://opensync-topaz.vercel.app/embed.js" defer></script>
 </body>
 </html>
